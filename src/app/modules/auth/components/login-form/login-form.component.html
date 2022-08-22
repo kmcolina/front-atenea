@@ -1,0 +1,41 @@
+<ng-container class="d-flex ">
+
+    <form class="card account-container">
+        <div class="title title-white">
+            Inicia Sesión
+        </div>
+        <mat-form-field class="title-white p-b">
+            <mat-label class="title-white">Usuario</mat-label>
+            <input class="title-white" matInput placeholder="Usuario" [formControl]="usrFormControl"
+                [(ngModel)]="loginData.Usuario" name="Usuario" required>
+            <mat-error *ngIf="usrFormControl.hasError('usuario') && !usrFormControl.hasError('required')">
+                Ingrese un usuario valido
+            </mat-error>
+            <mat-error *ngIf="usrFormControl.hasError('required')">
+                Usuario es
+                <strong>obligatorio</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="title-white padding-style">
+
+            <mat-label class="title-white">Contraseña</mat-label>
+            <input class="title-white" matInput placeholder="Contraseña" [formControl]="pwdFormControl"
+                [type]="hidePassword ? 'contraseña' : 'text'" [(ngModel)]="loginData.Password" name="pwd" required>
+
+            <mat-icon matSuffix (click)="hidePassword = !hidePassword">{{hidePassword ? 'visibility_off' :
+                'visibility'}}
+            </mat-icon>
+
+
+            <mat-error *ngIf="pwdFormControl.hasError('required')">
+                Contraseña es
+                <strong>obligatoria</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-button mat-raised-button color="primary" (click)="loginUser()" class="button">Entrar</button>
+    </form>
+
+
+</ng-container>

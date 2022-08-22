@@ -1,0 +1,29 @@
+.container-img{
+    display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  
+  .boton{
+  
+    background:#004E9B;
+  box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.25);
+  width: 80%;
+  }
+  
+  .center-button{
+    display: flex;
+      justify-content: center;
+  
+  }
+  
+  .d-flex{
+   display: flex;
+   gap: 20px
+  }
+  
+  .img{
+    width: 431px;
+    height: 292px;
+    border-radius: 15px;
+  }

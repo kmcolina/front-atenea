@@ -1,0 +1,88 @@
+  <div class="barra">
+
+    <div class="barra-a">
+        Atenea
+    </div>
+    <div class="barra-n">
+        Noctua
+    </div>
+</div>
+
+<div class="container" style="margin-top: -25px;">
+    <div class="d-flex">
+        <ng-container class="d-flex ">
+
+            <form class="card account-container">
+                <div class="title title-white">
+                    Crear Perfil
+                </div>
+                <mat-form-field class="title-white p-b">
+                    <mat-label class="title-white">Nombre</mat-label>
+                    <input class="title-white" matInput placeholder="Usuario" [formControl]="firstNameFormControl" name="Usuario" required>
+                    <mat-error *ngIf="firstNameFormControl.hasError('usuario') && !firstNameFormControl.hasError('required')">
+                        Ingrese un nombre
+                    </mat-error>
+                    <mat-error *ngIf="firstNameFormControl.hasError('required')">
+                        Nombre es
+                        <strong>obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+          
+                <mat-form-field class="title-white">
+                    <mat-label class="title-white">Apellido</mat-label>
+                    <input class="title-white" matInput placeholder="Correo" [formControl]="lastNameFormControl" name="Correo"
+                        required>
+                    <mat-error class="title-white"
+                        *ngIf="lastNameFormControl.hasError('email') && !lastNameFormControl.hasError('required')">
+                        Ingresa un apellido
+                    </mat-error>
+                    <mat-error *ngIf="lastNameFormControl.hasError('required')">
+                        Correo es
+                        <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+                
+                <mat-form-field class="title-white p-b">
+                    <mat-label class="title-white">Dirección</mat-label>
+                    <input class="title-white" matInput placeholder="Usuario" [formControl]="directionFormControl" name="Usuario" required>
+                    <mat-error *ngIf="directionFormControl.hasError('usuario') && !directionFormControl.hasError('required')">
+                        Ingrese su dirección valido
+                    </mat-error>
+                    <mat-error *ngIf="directionFormControl.hasError('required')">
+                        Dirección es
+                        <strong>obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+          
+                <mat-form-field class="title-white" style="margin-bottom: 5px;">
+                    <mat-label class="title-white">Número de teléfono</mat-label>
+                    <input class="title-white" matInput placeholder="Correo" [formControl]="phoneFormControl" name="Correo"
+                        required>
+                    <mat-error class="title-white"
+                        *ngIf="phoneFormControl.hasError('email') && !phoneFormControl.hasError('required')">
+                        Ingresa un número de teléfono Valido
+                    </mat-error>
+                    <mat-error *ngIf="phoneFormControl.hasError('required')">
+                        número de teléfono es
+                        <strong>Obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+        
+          
+                <button mat-button mat-raised-button color="primary" (click)="loginUser()" class="button">Crear</button>
+            </form>
+          
+          
+          </ng-container>
+
+        <div class="container-img">
+            <div>
+                <img class="img" [src]="atenea" alt="Login" />
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>

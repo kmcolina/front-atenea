@@ -1,0 +1,115 @@
+* {
+    font-family: 'Ubuntu';
+      --transition: 0.15s;
+      --border-radius: 50%;
+      --box-shadow: #32CC96;
+      --background: #32CC96;
+  
+    }
+    
+  
+  .example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+  
+  
+  
+  .rtl{
+    direction:rtl;
+  }
+  .fix .md-label{
+    margin-right:10px;
+  }
+  :host ::ng-deep .mat-radio-label-content {
+  
+    display: flex;
+    justify-content: left;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 22px;
+  /* identical to box height */
+  
+  text-align: justify;
+  width: 778px;
+  
+  }
+  
+  
+  :host ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    background-color: #32CC96;
+    border-color: #32CC96;
+  }
+  
+  
+  
+  :host ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #004E9B;
+  }
+  
+  .body-question{
+    text-align: justify;
+    
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 22px;
+  }
+  
+    .card-check{
+    //  width: 810.03px;
+    max-width: 800px;
+  height: 563.68px;
+  background: rgba(90, 55, 180, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  padding: 30px;
+  margin-left: 40px;
+  margin-bottom: 51px;
+    }
+  
+  
+  .title{
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 34px;
+    padding-bottom: 32px;
+      display: flex;
+  
+  }
+  .title-white{
+    font-family: 'Ubuntu';
+  font-size: 24px;
+      padding-top: 20px;
+  }
+  
+  .btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  }
+  
+  
+  .text{
+    margin: 0 50px 0 50px;
+    font-family: 'Ubuntu' !important;
+    text-align: justify !important;;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.23px;
+  line-height: 23px;
+  text-align: center;
+  
+  color: #000000;
+  }

@@ -1,0 +1,243 @@
+<mat-toolbar color="primary" class="banner-container g-bar" style="height: 38px;">
+    <span style="padding-left:15px"> Noctua </span>
+
+    <div class="close" (click)="close()">
+        Cerrar Sesion
+    </div>
+</mat-toolbar>
+
+<div class="container-top">
+    <div class="izq">
+        <div class="profile">
+            <div class="avatar">
+                <img src="/assets/avatar.svg" alt="">
+                <div class="name">
+                    {{this.dataListProfile?.first_name}} {{this.dataListProfile?.last_name}}    
+                    <div class="location">
+                        {{this.dataListProfile?.direction}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-c">
+                Progreso de Carrera
+                <div class="barra-progress">
+                    20%
+                    <span class="text-p">
+                        faltan 84 lecciones
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cent">
+        <div class="izq">
+            <div class="circle-d-flex">
+                <div class="circle">
+                    <img style="    width: 71px;
+                    height: 79px;" src="/assets/star.svg" alt="">
+                </div>
+                <span class="text-circle">
+                    Estrellas Totales
+                </span>
+            </div>
+
+            <div class="circle-d-flex">
+                <div class="circle zero">
+                    <span class="texto" style="    margin: 19px;
+                    margin-left: 8px;">
+                        1085
+                    </span>
+                </div>
+                <span class="text-circle">
+                    Ranking
+                </span>
+            </div>
+
+        </div>
+
+        <div class="der">
+            <div class="circle-d-flex">
+                <div class="circle">
+                    <img style="margin-left: 7px;
+                    margin-top: 15px;" src="/assets/training.svg" alt="">
+                </div>
+                <span class="text-circle">
+                    12 Días en entrenamiento
+                </span>
+            </div>
+            <div class="circle-d-flex">
+                <div class="circle zero">
+                    <span class="texto">
+                        0
+                    </span>
+
+                </div>
+                <span class="text-circle" style=" width: 140px;">
+                    Cursos Completados
+                </span>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="der">
+
+    </div>
+
+</div>
+
+<div class="nav-bar">
+
+    <div class="element" *ngFor="let item of navBarText;  let i = index" [class.active]="this.active === i"
+        (click)=activeItem(i)>
+        {{item}}
+    </div>
+
+
+
+</div>
+
+<div class="container-down">
+
+    <div class="card-i">
+        <ng-container [ngSwitch]="this.active">
+
+            <div *ngSwitchCase="0">
+                <div *ngFor="let value of quizData; let showIndex index">
+
+                
+                <div class="card-progress" (click)="showCourse(value.courseId)">
+                    <span class="cont-card">
+                        <img class="img-g" [src]="skillsCompletes[0].img" />
+                        <div class="title-g">{{value.name}}</div>
+
+                    </span>
+                    <span class="progress">
+
+                    </span>
+                </div>
+            </div> 
+
+            <div class="cont-main">
+
+                <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
+
+
+                    <label [for]="'myRadio-' + i">
+                        <input type="radio" [id]="'myRadio-' + i" formArrayName="selectedSkills"
+                            (click)="submit(car)" [value]="car.name" />
+
+                        <span>
+                            <img [src]="car.img" />
+                            <div class="title-white">{{car.title}}</div>
+
+                            <span class="progress">
+
+                            </span>
+                        </span>
+
+                    </label>
+                </div>
+            </div>
+
+            
+            
+
+                <div class="col" *ngFor="let value of quizData; let showIndex index">
+                    <div class="card" (click)="showCourse(value.courseId)">
+                        <div>
+                            <img style="max-width: 300px;" src="assets/program.jpeg" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-size: 12px;">{{value.name}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+            <div *ngSwitchCase="1">
+
+
+
+            </div>
+
+            <div *ngSwitchCase="2" class="only-text">
+
+                ¡No tienes cursos incompletos!
+
+
+            </div>
+            <div *ngSwitchCase="3">
+                <div class="card-check" *ngIf="this.courseSelect== ''">
+                    <form class="cont-bg" class="example-section" [formGroup]="form" novalidate>
+
+
+                        <div class="cont-main">
+
+                            <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
+
+
+                                <label [for]="'myRadio-' + i">
+                                    <input type="radio" [id]="'myRadio-' + i" formArrayName="selectedSkills"
+                                        (click)="submit(car)" [value]="car.name" />
+
+                                    <span>
+                                        <img [src]="car.img" />
+                                        <div class="title-white">{{car.title}}</div>
+
+                                        <!--  <img [src]="car.img" /> -->
+                                    </span>
+
+                                </label>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- <app-datail-course *ngIf="this.courseSelect!== ''">
+
+                </app-datail-course> -->
+            </div>
+        </ng-container>
+
+
+
+
+    </div>
+    <div class=" card-d">
+        <ng-container *ngIf="this.active !== 3">
+            <div class="profile" style="margin-bottom: 15px" *ngFor="let item of rakingProfiles">
+                <div class="avatar">
+                    <img src={{item.avatar}} alt="">
+                    <div class="raking-name">
+                        {{item.name}}
+                        <div class="raking-location">
+                            {{item.location}}
+                        </div>
+                    </div>
+                    <div class="ranking-value">
+                        {{item.rval}}
+                    </div>
+
+                </div>
+            </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="this.active === 3">
+            <div class="select-c">
+                Selecciona un Curso
+            </div>
+        </ng-container>
+    </div>
+
+
+</div>

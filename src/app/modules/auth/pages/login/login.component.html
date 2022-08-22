@@ -1,0 +1,36 @@
+<div class="barra">
+
+    <div class="barra-a">
+        Atenea
+    </div>
+    <div class="barra-n">
+        Noctua
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="d-flex">
+
+        <div>
+            <div class="container-img">
+                <img class="img" [src]="atenea" alt="Login" />
+                <div class="text">
+                    Bienvenido de nuevo
+                </div>
+            </div>
+
+            <div class="center-button">
+
+
+                <button mat-button mat-raised-button color="primary" class="boton"
+                    routerLink="/registro">Regístrate</button>
+            </div>
+
+        </div>
+
+        <app-login-form></app-login-form>
+
+    </div>
+</div>

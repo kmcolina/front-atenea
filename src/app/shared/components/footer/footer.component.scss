@@ -1,0 +1,20 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 40px;
+    background-color: #444444;
+    padding: 0 20px;
+    z-index: 1;
+    flex-grow: 1;
+    // width: calc(100% - 64px);
+  
+    &.over {
+      position: relative;
+      width: 100%;
+      z-index: 1;
+      left: 0;
+    }
+  }
+  

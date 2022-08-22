@@ -1,0 +1,63 @@
+<div class="barra">
+
+    <div class="barra-a">
+        Atenea
+    </div>
+    <div class="barra-n">
+        Noctua
+    </div>
+</div>
+
+<div class="col-i">
+
+
+    <div class="card-check">
+
+
+        <div class="title">Pregunta 1</div>
+        <div class="cont-main">
+
+            <div class="body-question">
+                {{listQuestions.title}}
+            </div>
+
+            <div class="rtl">
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    [(ngModel)]="anwserQuestion">
+                    <mat-radio-button class="example-radio-button tu" *ngFor="let value of answers; let indexRes = index" [value]="value.correct">
+                        {{value.answer}}
+                    </mat-radio-button>
+                </mat-radio-group>
+                {{anwserQuestion}}
+            </div>
+
+        </div>
+        <div class=" btn">
+            <button type="submit" class="btn-shape" (click)="goNext()">Siguiente</button>
+        </div>
+
+
+
+    </div>
+
+    <div class="col-d">
+        <div class="mochuelo">
+
+            <img src="/assets/MochueloLateral.svg" alt="">
+        </div>
+        <div class="text">
+            Responde ahora algunas preguntas asociadas a páneles que seleccionaste antes.
+
+            <div style="margin-top:40px">
+                Esto nos dará certeza al
+                recomendarte
+                cursos para aprender.
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+

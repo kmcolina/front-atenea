@@ -1,0 +1,378 @@
+.container-top{
+    background: rgba(90, 55, 180, 0.5);
+    width: 1279.77px;
+height: 226.62px;
+
+display: flex;
+gap:20px;
+justify-content: space-between;
+
+padding: 20px;
+box-sizing: border-box;
+}
+
+
+.container-down{
+    display: flex;
+    gap: 30px;
+    margin: 24px;
+}
+
+.card-i{
+
+    background: rgba(90, 55, 180, 0.5);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 9px;
+
+width: 897px;
+height: 397px;
+
+padding: 24px;
+box-sizing: border-box;
+}
+
+.card-d{
+    background: rgba(90, 55, 180, 0.5);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 9px;
+width: 305px;
+height: 397px;
+
+padding: 20px;
+box-sizing: border-box;
+}
+
+.nav-bar{
+display: flex;
+gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0 20px 30px;
+    padding: 3px;
+}
+
+.element{
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+}
+
+.active {
+    background-color: #5A37B4;
+    border-radius: 10px;
+    width: 137.95px;
+height: 29.36px;
+}
+
+.card-check{
+    //  width: 810.03px;
+  height: 563.68px;
+  padding: 24px;
+  margin-left: 5px;
+  margin-bottom: 51px;
+    }
+
+
+    .cat{
+
+        box-sizing: border-box;
+        padding: 24px 24px 16px 16px;
+        box-sizing: border-box;
+    
+        background-color: #104068;
+        border-radius: 9px;
+     
+        overflow: hidden;
+        float: left;
+        width: 340.44px;
+        height: 126.45px;
+        border-radius: 9px;
+        background: #5C4BC6;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     
+    
+        img {
+          border-radius:  var(--border-radius);;
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+        
+       
+        }
+    
+      }
+      
+    .cat label span {
+      width: 340.44px;
+      height: 126.45px;
+      border-radius: 9px;
+      background: #5C4BC6;
+    
+      text-align: center;
+      padding: 3px 0;
+      display: flex;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+    
+    .cat label input {
+      position: absolute;
+      display: none;
+      color: #fff !important;
+    }
+      
+    .cat input:checked + span {
+      width: 99%;
+      height: 92.5%;
+      border-radius: 9px;
+      border: 1px solid #fff;
+      color: #ffffff;
+      text-shadow: 0 0  6px rgba(0, 0, 0, 0.8);
+    }
+    
+
+    
+   .cont-bg {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cont-main {
+    padding-bottom: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-content: center;
+    
+  }
+  
+
+  .title-white{
+    font-family: 'Ubuntu';
+  font-size: 24px;
+      padding-top: 20px;
+  }
+    
+
+  .only-text{
+    display: flex;
+font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 40px;
+margin-top: 150px;
+justify-content: center;
+  }
+
+  .card-progress{
+  width: 303px;
+  height: 126px;
+
+    background: rgba(90, 55, 180, 0.5);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 9px;
+
+padding: 15px;
+    box-sizing: border-box;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+  }
+
+  .cont-card{
+    display: flex;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+  }
+
+  .img-g {
+    border-radius:  var(--border-radius);;
+    width: 37px;
+    height: 37px;
+    object-fit: cover;
+  
+  }
+
+  .title-g {
+    font-weight: 400;
+font-size: 18px;
+line-height: 21px;
+  }
+
+  .progress{
+    background-color: #fff;
+    width:274.84px;
+    height:10.59px;
+
+    background: rgb(0,77,155);
+    background: linear-gradient(90deg, rgba(0,77,155,1) 50%, rgba(255,255,255,1) 50%);
+  }
+
+  .avatar{
+    display: flex;
+    gap: 20px;
+  }
+
+  .name{
+    margin-top: 24px;
+    font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+  }
+
+  .locaton{
+    display: flex;
+    font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+  }
+
+  .profile{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+  }
+
+  .progress-c{
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: 700;
+font-size: 20px;
+line-height: 23px;
+  }
+
+  .barra-progress{
+    padding-left: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17px;
+    width:305px;
+    height:19px;
+
+    background: rgb(0,77,155);
+    background: linear-gradient(90deg, rgba(0,77,155,1) 21%, rgba(255,255,255,1) 21%);
+  }
+
+  .text-p{
+    padding-left: 130px;
+    font-size: 15px;
+line-height: 17px;
+
+color: #222222;
+
+  }
+
+
+  .cent{
+
+    display: flex;
+    gap: 40px;
+    width: 510px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    row-gap: 10px;
+  }
+
+  .circle{
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+   background-color: white;
+  }
+
+  .circle-d-flex{
+width: 270px;
+    display: flex;
+  }
+
+  .text-circle{
+    padding-left: 10px;
+    padding-top: 20px;
+  }
+
+  .izq{
+    display: flex;
+  }
+
+  .der{
+    display: flex;
+  }
+
+  .zero{
+    font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+/* identical to box height */
+
+color: #dcca0e
+
+
+
+  }
+
+  .texto{
+    margin: 22px;
+margin-left: 26px;
+display: flex;
+  }
+
+
+  .raking-name{
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    margin-top: 12px;
+
+    width: 150px;
+  }
+
+  .raking-location{
+    display: flex;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .ranking-value{
+
+    width: 50px;
+    height: 31px;
+    background: #3F56BF;
+border-radius: 15px;
+display: flex;
+text-align: center;
+justify-content: center;
+
+align-items: center;
+margin-top: 10px;
+  }
+
+  .g-bar{
+    
+    background: rgb(90,55,180);
+    background: linear-gradient(90deg, rgba(90,55,180,1) 16%, rgba(91,67,192,1) 16%);
+  }
+
+  .close{
+    position: absolute;
+    right: 24px;
+  }

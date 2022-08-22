@@ -1,0 +1,59 @@
+<mat-toolbar color="primary" class="banner-container">
+    <span> My Angular Material Application </span>
+</mat-toolbar>
+
+<div class="container-top">
+    <div>
+        {{this.dataListProfile?.first_name}} {{this.dataListProfile?.last_name}}
+    </div>
+    <div class="d-flex justify-content-around">
+        {{this.dataListProfile?.direction}}
+        <span>Estrellas totales de 54</span>
+        <span>{{this.questionsList}}</span>
+    </div>
+
+    <p class="mt-2">Progreso de Carrera</p>
+    <mat-progress-bar mode="determinate" value="40" style="width: 20%;"></mat-progress-bar>
+    <div>
+        <button mat-raised-button color="primary">Abandonar Curso</button><br>
+        <button mat-raised-button color="primary">Pausar Curso</button><br>
+        <button mat-raised-button color="primary">Explorar Cursos</button><br>
+    </div>
+    
+</div>
+
+<div class="nav-bar">
+    <div class="element" *ngFor="let item from navbar">
+
+    </div>
+
+
+</div>
+
+<div class="container-down">
+
+    <div class="card-i">
+        <div class="row">
+            <div>
+                <div class="" *ngIf="categoryId > 0">
+                    <h2 class="mb-3">Programacion en: {{this.courseData?.name}}</h2>
+                    <div *ngFor="let value of listCategory; let indexElement = index">
+                        <div class="d-flex justify-content-between">
+                           <h3>{{value.title}}</h3>
+                           <button mat-button color="primary" [routerLink]="value.id">Volver a Cursar</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="card-content-panel" *ngIf="categoryId === 0">
+                    <h2 class="mb-3">¡No tienes cursos incompletos!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-d">
+        panel derecho
+    </div>
+
+
+</div>

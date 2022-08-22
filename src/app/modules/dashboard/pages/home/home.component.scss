@@ -1,0 +1,30 @@
+.container-top{
+    background: rgba(90, 55, 180, 0.5);
+    width: 1279.77px;
+height: 226.62px;
+}
+
+
+.container-down{
+    display: flex;
+    gap: 30px;
+    margin: 24px;
+}
+
+.card-i{
+
+    background: rgba(90, 55, 180, 0.5);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 9px;
+
+width: 897px;
+height: 397px;
+}
+
+.card-d{
+    background: rgba(90, 55, 180, 0.5);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 9px;
+width: 305px;
+height: 397px;
+}

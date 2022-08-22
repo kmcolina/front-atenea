@@ -1,0 +1,61 @@
+
+<div class="barra">
+
+    <div class="barra-a">
+        Atenea
+    </div>
+    <div class="barra-n">
+        Noctua
+    </div>
+</div>
+
+<div class="col-i">
+
+
+    <div class="card-check">
+        <form class="cont-bg" class="example-section" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+
+            <div class="title">Datos Profesionales</div>
+            <div class="cont-main">
+
+                <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
+
+
+                    <label [for]="'myCheckbox-' + i">
+
+                        <input type="checkbox" [id]="'myCheckbox-' + i" formArrayName="selectedSkills"
+                            (change)="onCheckboxChange($event)" [value]="car.name" />
+
+                        <span>
+                            <img [src]="car.img" />
+                            <div class="title-white">{{car.title}}</div>
+
+                            <!--  <img [src]="car.img" /> -->
+                        </span>
+
+                    </label>
+                </div>
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn-shape">Siguiente</button>
+            </div>
+
+
+        </form>
+    </div>
+
+    <div class="col-d">
+        <div class="mochuelo">
+
+            <img src="/assets/MochueloLateral.svg" alt="">
+        </div>
+        <div class="text">
+            Selecciona ahora los páneles con las temáticas que te interesen conocer. Esto nos dará certeza al
+            recomendarte
+            cursos para aprender.
+        </div>
+
+    </div>
+
+
+</div>
