@@ -108,12 +108,12 @@
         <ng-container [ngSwitch]="this.active">
 
             <div *ngSwitchCase="0">
-                <div *ngFor="let value of quizData; let showIndex index">
+                <div *ngFor="let value of quizData; index as i">
 
 
                     <div class="card-progress" (click)="showCourse(value.courseId)">
                         <span class="cont-card">
-                            <img class="img-g" [src]="skillsCompletes[0].img" />
+                            <img class="img-g" src="assets/program.jpeg" />
                             <div class="title-g">{{value.name}}</div>
 
                         </span>
@@ -121,11 +121,13 @@
 
                         </span>
                     </div>
+
                 </div>
+            </div>
 
-                <div class="cont-main">
+            <div class="cont-main">
 
-                    <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
+                <!--                     <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
 
 
                         <label [for]="'myRadio-' + i">
@@ -142,12 +144,11 @@
                             </span>
 
                         </label>
-                    </div>
-                </div>
+                    </div> -->
 
 
 
-
+                <!-- 
                 <div class="col" *ngFor="let value of quizData; let showIndex index">
                     <div class="card" (click)="showCourse(value.courseId)">
                         <div>
@@ -158,7 +159,7 @@
                         </div>
                     </div>
                 </div>
-
+ -->
 
 
             </div>
