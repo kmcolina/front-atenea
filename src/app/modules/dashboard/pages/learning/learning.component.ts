@@ -49,13 +49,10 @@ export class LearningComponent implements OnInit {
     this.question.showQuestionById(this.id.source._value.id)
       .subscribe((resp:any) => {
         resp.question.map((res:any) => {
-          console.log(res.correct);
           this.correct = res.correct;
           answers.push(res.answer);
-          console.log(res);
         });
         this.answers = resp.question;
-        console.log(resp.question);
         this.listQuestions = resp;
       })
   }
