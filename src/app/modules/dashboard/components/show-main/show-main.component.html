@@ -12,7 +12,7 @@
             <div class="avatar">
                 <img src="/assets/avatar.svg" alt="">
                 <div class="name">
-                    {{this.dataListProfile?.first_name}} {{this.dataListProfile?.last_name}}    
+                    {{this.dataListProfile?.first_name}} {{this.dataListProfile?.last_name}}
                     <div class="location">
                         {{this.dataListProfile?.direction}}
                     </div>
@@ -102,7 +102,7 @@
 
 </div>
 
-<div class="container-down">
+<div class="container-down col-12">
 
     <div class="card-i">
         <ng-container [ngSwitch]="this.active">
@@ -110,43 +110,43 @@
             <div *ngSwitchCase="0">
                 <div *ngFor="let value of quizData; let showIndex index">
 
-                
-                <div class="card-progress" (click)="showCourse(value.courseId)">
-                    <span class="cont-card">
-                        <img class="img-g" [src]="skillsCompletes[0].img" />
-                        <div class="title-g">{{value.name}}</div>
 
-                    </span>
-                    <span class="progress">
+                    <div class="card-progress" (click)="showCourse(value.courseId)">
+                        <span class="cont-card">
+                            <img class="img-g" [src]="skillsCompletes[0].img" />
+                            <div class="title-g">{{value.name}}</div>
 
-                    </span>
-                </div>
-            </div> 
-
-            <div class="cont-main">
-
-                <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
-
-
-                    <label [for]="'myRadio-' + i">
-                        <input type="radio" [id]="'myRadio-' + i" formArrayName="selectedSkills"
-                            (click)="submit(car)" [value]="car.name" />
-
-                        <span>
-                            <img [src]="car.img" />
-                            <div class="title-white">{{car.title}}</div>
-
-                            <span class="progress">
-
-                            </span>
                         </span>
+                        <span class="progress">
 
-                    </label>
+                        </span>
+                    </div>
                 </div>
-            </div>
 
-            
-            
+                <div class="cont-main">
+
+                    <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
+
+
+                        <label [for]="'myRadio-' + i">
+                            <input type="radio" [id]="'myRadio-' + i" formArrayName="selectedSkills"
+                                (click)="submit(car)" [value]="car.name" />
+
+                            <span>
+                                <img [src]="car.img" />
+                                <div class="title-white">{{car.title}}</div>
+
+                                <span class="progress">
+
+                                </span>
+                            </span>
+
+                        </label>
+                    </div>
+                </div>
+
+
+
 
                 <div class="col" *ngFor="let value of quizData; let showIndex index">
                     <div class="card" (click)="showCourse(value.courseId)">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
 
-                
+
 
             </div>
             <div *ngSwitchCase="1">
