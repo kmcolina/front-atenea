@@ -10,10 +10,9 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-show-main',
   templateUrl: './show-main.component.html',
-  styleUrls: ['./show-main.component.scss']
+  styleUrls: ['./show-main.component.scss'],
 })
 export class ShowMainComponent implements OnInit {
-
   navBarText = ['En Curso', 'Completo', 'Incompleto', 'Explorar'];
   active!: number;
   form!: FormGroup;
@@ -87,55 +86,55 @@ export class ShowMainComponent implements OnInit {
     },
   ];
 
-  SESSION_TOKEN:any = environment.sessionToken;
-  API_URL:any =environment.baseUri;
+  SESSION_TOKEN: any = environment.sessionToken;
+  API_URL: any = environment.baseUri;
   dataListProfile!: any;
-  quizData!:any;
-  constructor(private sessionStorage: SessionStorageService,
+  quizData!: any;
+  constructor(
+    private sessionStorage: SessionStorageService,
     private global: GlobalVariablesService,
     private profile: ProfileService,
     private formBuilder: FormBuilder,
     private quiz: QuizService,
-    private router: Router) { 
-      this.form = this.formBuilder.group({
-        selectedSkills: new FormArray([]),
-      });
-    }
+    private router: Router
+  ) {
+    this.form = this.formBuilder.group({
+      selectedSkills: new FormArray([]),
+    });
+    this.active = 0;
+  }
 
-  get auth(){
-    return this.sessionStorage.getJsonValue(this.SESSION_TOKEN)
+  get auth() {
+    return this.sessionStorage.getJsonValue(this.SESSION_TOKEN);
   }
 
   routerRedirect(value: number) {
     return ['quiz', value];
   }
 
-  showCourse(id:number){
+  showCourse(id: number) {
     this.global.setCategoryValues(id);
     this.router.navigate(['panel/quiz']);
   }
 
   ngOnInit(): void {
-    this.profile.validateProfile(this.auth.userID)
-    this.profile.showProfile(this.auth.userID)
-      .subscribe((resp:any) => {
-        this.dataListProfile = resp;
-        //console.log(resp);
+    this.profile.validateProfile(this.auth.userID);
+    this.profile.showProfile(this.auth.userID).subscribe((resp: any) => {
+      this.dataListProfile = resp;
+      //console.log(resp);
+    });
+
+    this.quiz.showQuiz().subscribe((resp) => {
+      const data: any = [];
+      resp.map((res: any) => {
+        if (res.profileId === this.auth.userID) {
+          //this.quizData = res;
+          data.push(res);
+        }
       });
-
-    this.quiz.showQuiz()
-      .subscribe(resp => {
-        const data:any = [];
-        resp.map((res:any) => {
-          if(res.profileId === this.auth.userID){
-            //this.quizData = res;
-            data.push(res);
-          }
-        });
-        this.quizData = data;
-        console.log(data);
-      })
-
+      this.quizData = data;
+      console.log(data);
+    });
   }
 
   activeItem(item: any) {
@@ -181,5 +180,4 @@ export class ShowMainComponent implements OnInit {
   close() {
     this.router.navigate(['']);
   }
-
 }
