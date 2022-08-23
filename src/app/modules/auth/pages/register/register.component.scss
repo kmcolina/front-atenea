@@ -1,29 +1,67 @@
 .container-img{
-    display: flex;
-      flex-direction: column;
-      gap: 20px;
-  }
-  
-  .boton{
-  
-    background:#004E9B;
+  display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #B1C6FF;
+   // width: 492px;
+    height: 292px;
+    border-radius: 9px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.container{
+  padding-top: 40px;
+}
+
+.boton{
+  background:#004E9B;
   box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.25);
   width: 80%;
-  }
   
-  .center-button{
-    display: flex;
-      justify-content: center;
   
-  }
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 36px;
+  height: 50px;
+  width: 387.43px;
+}
+
+.center-button{
+  display: flex;
+    justify-content: center;
+
+}
+
+.d-flex{
+ display: flex;
+ gap: 20px
+}
+
+.img{
+  border-radius: 15px;
+  margin-top: 20px;
   
-  .d-flex{
-   display: flex;
-   gap: 20px
-  }
-  
-  .img{
-    width: 431px;
-    height: 292px;
-    border-radius: 15px;
-  }
+}
+
+.text{
+  display: flex;
+  font-family: 'Ubuntu';
+font-style: italic;
+font-weight: 600;
+font-size: 40px;
+line-height: 46px;
+text-align: center;
+
+color: #222222;
+padding-top:50px ;
+
+}
+
+.c-img{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
