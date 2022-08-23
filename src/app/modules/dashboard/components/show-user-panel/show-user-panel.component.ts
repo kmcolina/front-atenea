@@ -30,7 +30,7 @@ export class ShowUserPanelComponent implements OnInit {
     private global: GlobalVariablesService,
     private router: Router
   ) {
-    this.active = 3;
+    this.active = 0;
   }
 
   get auth() {
