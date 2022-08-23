@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GlobalVariablesService } from 'src/app/core/services/global-variables/global-variables.service';
 import { SessionStorageService } from 'src/app/core/services/session-storage/session-storage.service';
+import { CourseService } from 'src/app/services/course.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { QuizService } from 'src/app/services/quiz.service';
 import { environment } from 'src/environments/environment';
@@ -19,6 +20,8 @@ export class ShowMainComponent implements OnInit {
 
   userName!: string;
   location!: string;
+
+  courseData!: any;
 
   courseSelect: string = '';
 
@@ -96,7 +99,8 @@ export class ShowMainComponent implements OnInit {
     private profile: ProfileService,
     private formBuilder: FormBuilder,
     private quiz: QuizService,
-    private router: Router
+    private router: Router,
+    private course: CourseService
   ) {
     this.form = this.formBuilder.group({
       selectedSkills: new FormArray([]),
@@ -134,6 +138,11 @@ export class ShowMainComponent implements OnInit {
       });
       this.quizData = data;
       console.log(data);
+    });
+
+    this.course.showCourses().subscribe((resp) => {
+      console.log(resp);
+      this.courseData = resp;
     });
   }
 

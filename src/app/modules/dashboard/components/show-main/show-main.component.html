@@ -181,7 +181,7 @@
 
                         <div class="cont-main">
 
-                            <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
+                            <!--                             <div class="cat action" *ngFor="let car of skillsAvaible; index as i">
 
 
                                 <label [for]="'myRadio-' + i">
@@ -192,7 +192,23 @@
                                         <img [src]="car.img" />
                                         <div class="title-white">{{car.title}}</div>
 
-                                        <!--  <img [src]="car.img" /> -->
+                            
+                                    </span>
+
+                                </label>
+                            </div> -->
+
+                            <div class="cat action" *ngFor="let car of courseData; index as i">
+
+
+                                <label [for]="'myCheckbox-' + i">
+
+                                    <input type="checkbox" [id]="'myCheckbox-' + i" formArrayName="selectedSkills"
+                                        (change)="onCheckboxChange($event)" [value]="[car.name, car.id]" />
+
+                                    <span>
+                                        <img src="assets/cursos.jpg" />
+                                        <div class="title-white">{{car.name}}</div>
                                     </span>
 
                                 </label>
