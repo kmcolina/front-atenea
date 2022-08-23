@@ -43,7 +43,7 @@ export class RegisterFormComponent implements OnInit {
                   }
     this.authService.register(obj).subscribe({
       next: data => {
-        this.router.navigate(['/panel']);
+        this.router.navigate(['/login']);
         console.log(data);
       },
       error: err => {

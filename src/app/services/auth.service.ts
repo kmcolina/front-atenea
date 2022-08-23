@@ -6,12 +6,12 @@ import { environment } from 'src/environments/environment';
 import { SessionStorageService } from '../core/services/session-storage/session-storage.service';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 
+  /*headers: new HttpHeaders({ 
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
     "Access-Control-Allow-Methods":"GET,HEAD,OPTIONS,POST,PUT",
     'Access-Control-Allow-Credentials': 'true'
-  })
+  })*/
   // .set('Accept', 'application/json')
   //   .set('Content-Type', 'application/json')
   //   .set('Access-Control-Allow-Origin', '*')
@@ -30,11 +30,11 @@ export class AuthService {
     private router: Router) {}
 
   login(obj:any): Observable<any>{
-    return this.http.post(`${this.AUTH_API}signin`, obj, httpOptions);
+    return this.http.post(`${this.AUTH_API}signin`, obj, /*httpOptions*/);
   }
 
   register(obj:any): Observable<any>{
-    return this.http.post(`${this.AUTH_API}signup`, obj, httpOptions);
+    return this.http.post(`${this.AUTH_API}signup`, obj, /*httpOptions*/);
   }
 
   verificaAutenticacion() {

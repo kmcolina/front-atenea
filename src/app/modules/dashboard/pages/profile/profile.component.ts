@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { SessionStorageService } from 'src/app/core/services/session-storage/session-storage.service';
 
@@ -21,6 +22,7 @@ export class ProfileComponent implements OnInit {
   SESSION_TOKEN:any = environment.sessionToken;
   constructor(private profile: ProfileService,
     private sessionStorage: SessionStorageService,
+    private snackbar: MatSnackBar,
     private router: Router) { }
 
     get auth(){
@@ -49,15 +51,22 @@ export class ProfileComponent implements OnInit {
         },
         error: err => {
           console.log(err);
+          this.mostrarSnakebar(err.error.message)
         }
       });
   }
 
-
-
   ngOnInit(): void {}
 
 
+  mostrarSnakebar(mensaje: string) {
+    this.snackbar.open(mensaje, '', {
+      duration: 2500,
+      verticalPosition: 'top',
+      horizontalPosition: 'right',
+      panelClass: 'notif-danger'
+    });
+  }
 
 
 }
