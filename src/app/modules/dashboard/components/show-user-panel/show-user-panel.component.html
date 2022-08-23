@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="banner-container g-bar" style="height: 38px;">
     <span style="padding-left:15px"> Noctua </span>
 
-    <div class="close" >
+    <div class="close">
         Cerrar Sesion
     </div>
 </mat-toolbar>
@@ -12,7 +12,7 @@
             <div class="avatar">
                 <img src="/assets/avatar.svg" alt="">
                 <div class="name">
-                    {{this.dataListProfile?.first_name}} {{this.dataListProfile?.last_name}}    
+                    {{this.dataListProfile?.first_name}} {{this.dataListProfile?.last_name}}
                     <div class="location">
                         {{this.dataListProfile?.direction}}
                     </div>
@@ -92,12 +92,16 @@
 </div>
 
 <div class="nav-bar">
-    <div class="element" *ngFor="let item from navbar">
 
+    <div class="element" *ngFor="let item of navBarText;  let i = index" [class.active]="this.active === i"
+        (click)=activeItem(i)>
+        {{item}}
     </div>
 
 
+
 </div>
+
 <div class="container-down">
 
     <div class="card-i">
@@ -107,10 +111,10 @@
                     <h2 class="mb-3">Programacion en: {{this.courseData?.name}}</h2>
                     <div *ngFor="let value of listCategory; let indexElement = index">
                         <div class="d-flex justify-content-between">
-                           <h3>{{value.title}}</h3>
-                           <button mat-button color="primary" [routerLink]="value.id">Volver a Cursar</button>
+                            <h3>{{value.title}}</h3>
+                            <button mat-button color="primary" [routerLink]="value.id">Volver a Cursar</button>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="card-content-panel" *ngIf="categoryId === 0">
@@ -125,4 +129,3 @@
 
 
 </div>
-
