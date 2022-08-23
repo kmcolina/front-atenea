@@ -28,10 +28,15 @@ const routes: Routes = [
     path: "cursos",
     component: CoursesComponent
   },
-  // {
-  //   path: "actitudes",
-  //   component: ActitudesComponent
-  // }
+  {
+    path: '404',
+    component: HomeComponent
+  },
+  {
+    path: '**',
+    // component: ErrorPageComponent
+    redirectTo: 'HomeComponent'
+  }
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
+import { HomeComponent } from './modules/auth/pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -13,15 +14,15 @@ const routes: Routes = [
     canLoad: [AuthGuard],
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: '404',
-  //   component: ErrorPageComponent
-  // },
-  // {
-  //   path: '**',
-  //   // component: ErrorPageComponent
-  //   redirectTo: ''
-  // }
+  {
+    path: '404',
+    component: HomeComponent
+  },
+  {
+    path: '**',
+    // component: HomeComponent
+    redirectTo: ''
+  }
 ];
 
 @NgModule({
