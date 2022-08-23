@@ -29,7 +29,9 @@ export class ShowUserPanelComponent implements OnInit {
     private course: CourseService,
     private global: GlobalVariablesService,
     private router: Router
-  ) {}
+  ) {
+    this.active = 3;
+  }
 
   get auth() {
     return this.sessionStorage.getJsonValue(this.SESSION_TOKEN);
