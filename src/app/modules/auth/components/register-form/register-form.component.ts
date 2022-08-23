@@ -15,6 +15,7 @@ export class RegisterFormComponent implements OnInit {
   username: string = '';
   password: string = '';
   show: boolean = false;
+  error: any;
 
   hidePassword = true;
   loginData: AccountDTO = { Usuario: '', Password: '' };
@@ -44,17 +45,17 @@ export class RegisterFormComponent implements OnInit {
     this.authService.register(obj).subscribe({
       next: data => {
         this.router.navigate(['/login']);
-        console.log(data);
       },
       error: err => {
-        console.log(err);
         this.mostrarSnakebar(err.error.message);
+        this.error = err;
       }
     });
+
+    this.router.navigate(['/login']);
   }
 
   submit() {
-    console.log('user name is ' + this.username);
     this.clear();
   }
   clear() {

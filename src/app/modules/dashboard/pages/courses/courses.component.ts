@@ -100,7 +100,7 @@ export class CoursesComponent implements OnInit {
 
     this.course.showCourses()
       .subscribe(resp => {
-        console.log(resp);
+    
         this.courseData = resp;
       })
 

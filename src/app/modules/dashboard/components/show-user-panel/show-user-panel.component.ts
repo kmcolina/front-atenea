@@ -52,7 +52,6 @@ export class ShowUserPanelComponent implements OnInit {
     });
 
     this.course.showCourseById(this.categoryId).subscribe((resp) => {
-      console.log(resp);
       this.courseData = resp;
     });
 
@@ -64,7 +63,6 @@ export class ShowUserPanelComponent implements OnInit {
         }
       });
       this.listCategory = response;
-      console.log(this.listCategory);
     });
   }
 
@@ -75,7 +73,6 @@ export class ShowUserPanelComponent implements OnInit {
   }
 
   activeItem(item: any) {
-    console.log('item', item);
     this.active = item;
     this.router.navigate(['panel']);
     this.courseSelect = '';

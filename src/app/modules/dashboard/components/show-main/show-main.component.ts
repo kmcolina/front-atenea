@@ -149,7 +149,6 @@ export class ShowMainComponent implements OnInit {
         }
       });
       this.quizData = data;
-      console.log(data);
     });
   }
 
@@ -173,7 +172,6 @@ export class ShowMainComponent implements OnInit {
   }
 
   onCheckboxChange(event: any) {
-    console.log('change');
     const selectedSkills = this.form.controls['selectedSkills'] as FormArray;
     if (event.target.checked) {
       selectedSkills.push(new FormControl(event.target.value));

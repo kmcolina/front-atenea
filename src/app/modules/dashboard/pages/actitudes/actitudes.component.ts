@@ -50,7 +50,6 @@ export class ActitudesComponent implements OnInit {
   }
 
   onCheckboxChange(event: any) {
-    console.log('change');
     const selectedSkills = this.form.controls['selectedSkills'] as FormArray;
     if (event.target.checked) {
       selectedSkills.push(new FormControl(event.target.value));
@@ -63,12 +62,10 @@ export class ActitudesComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
     this.router.navigate(['skills/test-skill']);
   }
 
   ngOnInit(): void {
-    console.log('init del check');
   }
 
 }

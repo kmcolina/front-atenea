@@ -46,8 +46,6 @@ export class LoginFormComponent implements OnInit {
     }
     this.authService.login(obj).subscribe({
       next: data => {
-        console.log(data);
-        console.log(data.roles)
         session.userID = data.id;
         session.username = data.username;
         session.email = data.email;
@@ -65,7 +63,6 @@ export class LoginFormComponent implements OnInit {
 
 
   submit() {
-    console.log('user name is ' + this.username);
     this.clear();
   }
   clear() {
