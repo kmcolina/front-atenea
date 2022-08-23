@@ -150,6 +150,15 @@ line-height: 21px;
     border-radius: 5px;
   }
 
+  .notif-danger {
+    color: #ffffff !important; // green
+    background-color: #ff5252 !important;
+    border-color: #c7e8f7 !important;
+    .mat-simple-snackbar-action {
+        color: #ffffff !important;
+    }
+  }
+
  
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

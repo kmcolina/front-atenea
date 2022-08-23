@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { AccountDTO } from 'src/app/services/models/accountDto';
@@ -25,6 +26,7 @@ export class RegisterFormComponent implements OnInit {
   usrFormControl = new FormControl('', [Validators.required]);
 
   constructor(private authService: AuthService,
+    private snackbar: MatSnackBar,
     private router: Router) { }
 
   loginUser() {
@@ -41,11 +43,12 @@ export class RegisterFormComponent implements OnInit {
                   }
     this.authService.register(obj).subscribe({
       next: data => {
-        this.router.navigate(['']);
+        this.router.navigate(['/panel']);
         console.log(data);
       },
       error: err => {
         console.log(err);
+        this.mostrarSnakebar(err.error.message);
       }
     });
   }
@@ -63,21 +66,14 @@ export class RegisterFormComponent implements OnInit {
 
   ngOnInit(): void {this.authService.verifySession()}
 
-  // onSubmit(): void {
-  //   const { username, email, password } = this.form;
-  //   this.authService.register(username, email, password).subscribe({
-  //     next: data => {
-  //       console.log(data);
-  //       this.isSuccessful = true;
-  //       this.isSignUpFailed = false;
-  //     },
-  //     error: err => {
-  //       console.log(err);
-  //       this.errorMessage = err.error.message;
-  //       this.isSignUpFailed = true;
-  //     }
-  //   });
-  // }
+  mostrarSnakebar(mensaje: string) {
+    this.snackbar.open(mensaje, '', {
+      duration: 2500,
+      verticalPosition: 'top',
+      horizontalPosition: 'right',
+      panelClass: 'notif-danger'
+    });
+  }
 
   
 

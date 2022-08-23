@@ -178,6 +178,8 @@ export class ShowMainComponent implements OnInit {
   }
 
   close() {
-    this.router.navigate(['']);
+    this.sessionStorage.clearItems();
+    this.sessionStorage.clearToken();
+    this.router.navigate(['/']);
   }
 }

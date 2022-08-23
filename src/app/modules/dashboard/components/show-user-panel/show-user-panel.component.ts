@@ -68,6 +68,12 @@ export class ShowUserPanelComponent implements OnInit {
     });
   }
 
+  close() {
+    this.sessionStorage.clearItems();
+    this.sessionStorage.clearToken();
+    this.router.navigate(['/']);
+  }
+
   activeItem(item: any) {
     console.log('item', item);
     this.active = item;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { SessionStorageService } from 'src/app/core/services/session-storage/session-storage.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -24,6 +25,7 @@ export class LoginFormComponent implements OnInit {
   pwdFormControl = new FormControl('', [Validators.required]);
   usrFormControl = new FormControl('', [Validators.required]);
   constructor(private authService: AuthService, 
+    private snackbar: MatSnackBar,
     private sesionStorage: SessionStorageService,
     private router: Router) { }
 
@@ -55,7 +57,7 @@ export class LoginFormComponent implements OnInit {
         this.router.navigate(['/panel']);
       },
       error: err => {
-        this.errorMessage = err.error.message;
+        this.mostrarSnakebar("Usuario o password invalidos!");
         session.logged = false;
       }
     });
@@ -70,6 +72,15 @@ export class LoginFormComponent implements OnInit {
     this.username = '';
     this.password = '';
     this.show = true;
+  }
+
+  mostrarSnakebar(mensaje: string) {
+    this.snackbar.open(mensaje, '', {
+      duration: 2500,
+      verticalPosition: 'top',
+      horizontalPosition: 'right',
+      panelClass: 'notif-danger'
+    });
   }
 }
 
