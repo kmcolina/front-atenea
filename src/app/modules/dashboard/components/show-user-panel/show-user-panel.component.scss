@@ -35,7 +35,7 @@ height: 397px;
 padding: 24px;
 box-sizing: border-box;
 
-overflow: scroll;
+overflow-y: scroll;
 }
 
 .card-d{
@@ -92,7 +92,7 @@ margin-bottom: 51px;
       background-color: #104068;
       border-radius: 9px;
    
-      overflow: hidden;
+      overflow-y: hidden;
       float: left;
       width: 340.44px;
       height: 126.45px;
