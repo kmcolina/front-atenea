@@ -202,6 +202,27 @@
                     </form>
                 </div>
 
+                <div class="selected">
+
+                    <div class="row">
+                        <div>
+                            <div class="categorys">
+                                <p class="mb-3">Programacion en: {{this.courseData.name}}</p>
+                                <div *ngFor="let value of listCategory; let indexElement = index">
+                                    <div class="d-flex justify-content-between categorys-t">
+                                        <p>{{value.title}}</p>
+                                        <button mat-button color="primary">Volver a
+                                            Cursar</button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
                 <!-- <app-datail-course *ngIf="this.courseSelect!== ''">
 
                 </app-datail-course> -->

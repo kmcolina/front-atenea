@@ -86,6 +86,22 @@ export class ShowMainComponent implements OnInit {
     },
   ];
 
+  courseData = { name: 'Programacion en Python' };
+  listCategory = [
+    {
+      id: 1,
+      title: 'Python File Handling',
+    },
+    {
+      id: 2,
+      title: 'Python Database Handling',
+    },
+    {
+      id: 3,
+      title: 'Download Python',
+    },
+  ];
+
   SESSION_TOKEN: any = environment.sessionToken;
   API_URL: any = environment.baseUri;
   dataListProfile!: any;
