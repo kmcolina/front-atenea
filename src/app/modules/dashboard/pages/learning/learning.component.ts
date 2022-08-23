@@ -9,52 +9,52 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-learning',
   templateUrl: './learning.component.html',
-  styleUrls: ['./learning.component.scss']
+  styleUrls: ['./learning.component.scss'],
 })
 export class LearningComponent implements OnInit {
-  SESSION_TOKEN:any = environment.sessionToken;
-  id:any;
-  lesson:boolean = false;
-  listQuestions:any;
-  result:any;
+  SESSION_TOKEN: any = environment.sessionToken;
+  id: any;
+  lesson: boolean = false;
+  listQuestions: any;
+  result: any;
   favoriteSeason: string | undefined;
   seasons: string[] = ['Winter', 'Spring', 'Summer'];
-  correct:any;
-  answers:any[] = [];
+  correct: any;
+  answers: any[] = [];
   anwserQuestion!: string;
-  get auth(){
-    return this.sessionStorage.getJsonValue(this.SESSION_TOKEN)
+  get auth() {
+    return this.sessionStorage.getJsonValue(this.SESSION_TOKEN);
   }
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private router: Router,
     private profile: ProfileService,
     private sessionStorage: SessionStorageService,
-    private question: QuestionService) {
-    this.id = this.route.params.pipe(map(p => p['id']));
-   }
+    private question: QuestionService
+  ) {
+    this.id = this.route.params.pipe(map((p) => p['id']));
+  }
 
-   showQuestions(){
-    
-   }
+  showQuestions() {}
 
-   goNext() {
+  goNext() {
     console.log('respuesta ', this.anwserQuestion);
 
-    this.router.navigate(['panel/perfil']);
+    this.router.navigate(['panel']);
   }
 
   ngOnInit(): void {
     this.profile.validateProfile(this.auth.userID);
     const answers: any[] = [];
-    this.question.showQuestionById(this.id.source._value.id)
-      .subscribe((resp:any) => {
-        resp.question.map((res:any) => {
+    this.question
+      .showQuestionById(this.id.source._value.id)
+      .subscribe((resp: any) => {
+        resp.question.map((res: any) => {
           this.correct = res.correct;
           answers.push(res.answer);
         });
         this.answers = resp.question;
         this.listQuestions = resp;
-      })
+      });
   }
-
 }

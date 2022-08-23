@@ -11,7 +11,7 @@
 <div class="col-i">
 
 
-    <div class="card-check">
+    <div class="card-check col-8">
 
 
         <div class="title">Pregunta 1</div>
@@ -24,11 +24,12 @@
             <div class="rtl">
                 <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
                     [(ngModel)]="anwserQuestion">
-                    <mat-radio-button class="example-radio-button tu" *ngFor="let value of answers; let indexRes = index" [value]="value.correct">
+                    <mat-radio-button class="example-radio-button tu"
+                        *ngFor="let value of answers; let indexRes = index" [value]="value.correct">
                         {{value.answer}}
                     </mat-radio-button>
                 </mat-radio-group>
-                {{anwserQuestion}}
+                <!-- {{anwserQuestion}} -->
             </div>
 
         </div>
@@ -40,7 +41,7 @@
 
     </div>
 
-    <div class="col-d">
+    <div class="col-d col-3">
         <div class="mochuelo">
 
             <img src="/assets/MochueloLateral.svg" alt="">
@@ -59,5 +60,3 @@
 
 
 </div>
-
-
