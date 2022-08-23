@@ -1,13 +1,15 @@
 .container-top{
     background: rgba(90, 55, 180, 0.5);
     //width: 1279.77px;
-height: 226.62px;
+//height: 226.62px;
 
 display: flex;
 gap:20px;
 justify-content: space-between;
 
 padding: 20px;
+padding-bottom: 10px;
+padding-top: 5px;
 box-sizing: border-box;
 }
 
@@ -15,7 +17,9 @@ box-sizing: border-box;
 .container-down{
     display: flex;
     gap: 30px;
-    margin: 24px;
+    //margin: 24px;
+    margin-left: 24px;
+    margin-top: 10px;
 }
 
 .card-i{
@@ -51,7 +55,7 @@ display: flex;
 gap: 20px;
     align-items: center;
     text-align: center;
-    margin: 10px 0 20px 30px;
+    margin: 0 0 0 30px;
     padding: 3px;
 }
 

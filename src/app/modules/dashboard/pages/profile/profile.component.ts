@@ -45,7 +45,7 @@ export class ProfileComponent implements OnInit {
       console.log(obj);
       this.profile.addProfile(obj, this.auth.userID).subscribe({
         next: data => {
-          this.router.navigate(['/panel']);
+          this.router.navigate(['/panel/cursos']);
         },
         error: err => {
           console.log(err);

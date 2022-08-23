@@ -100,10 +100,6 @@ export class ShowMainComponent implements OnInit {
       this.form = this.formBuilder.group({
         selectedSkills: new FormArray([]),
       });
-  
-      this.userName = 'Yker Mendoza';
-      this.location = 'Caracas, Venezuela';
-      this.active = 3;
     }
 
   get auth(){

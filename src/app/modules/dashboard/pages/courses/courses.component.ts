@@ -54,16 +54,16 @@ export class CoursesComponent implements OnInit {
     let data = resp[0].selectedSkills;
     data.map((res:any) => {
       let separados = res.split(',');
-      console.log(separados[0], separados[1])
-      this.quiz.addQuiz(this.auth.userID, separados[1], separados[0])
+      const obj:any = {
+        name: separados[0]
+      }
+      this.quiz.addQuiz(this.auth.userID, separados[1], obj)
           .subscribe(resp => {
             if(resp){
               this.router.navigate(['panel']);
             }
           })
     })
-
-    //this.router.navigate(['skills/test-skill']);
   }
 
   routerRedirect(value: number) {
