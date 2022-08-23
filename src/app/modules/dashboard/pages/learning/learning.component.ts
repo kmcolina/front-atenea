@@ -38,8 +38,6 @@ export class LearningComponent implements OnInit {
   showQuestions() {}
 
   goNext() {
-    console.log('respuesta ', this.anwserQuestion);
-
     this.router.navigate(['panel']);
   }
 

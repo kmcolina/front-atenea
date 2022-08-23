@@ -44,19 +44,24 @@ export class ProfileComponent implements OnInit {
                         phone: this.phoneFormControl?.value,
                   }
 
-      console.log(obj);
       this.profile.addProfile(obj, this.auth.userID).subscribe({
         next: data => {
           this.router.navigate(['/panel/cursos']);
         },
         error: err => {
-          console.log(err);
           this.mostrarSnakebar(err.error.message)
         }
       });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.profile.showProfile(this.auth.userID)
+      .subscribe(resp => {
+        if(resp != null || resp != undefined){
+          this.router.navigate(['/panel']);
+        }
+      })
+  }
 
 
   mostrarSnakebar(mensaje: string) {

@@ -50,7 +50,6 @@ export class ProfileManagerComponent implements OnInit {
           }
         });
         this.quizData = data;
-        console.log(data);
       })
 
   }
